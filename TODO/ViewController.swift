@@ -11,12 +11,17 @@ class ViewController: UIViewController {
 
     //Optional type (Nullable) nil(null)을 가질 수 있음
     var receivedMessage : String?
+    var count : Int = 0 {
+        didSet{
+            countLabel.text = String(count)
+        }
+    }
     
     //변수의 메모리 할당에는 strong, weak, unowned의 타입이 존재한다.
     //https://bongcando.tistory.com/21
     
     @IBOutlet weak var messageLabel: UILabel!
-    
+    @IBOutlet weak var countLabel: UILabel!
     
     
 //    outlet(컴포넌트)들과 action이 생성 및 연결되는 부분
@@ -53,6 +58,12 @@ class ViewController: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+    }
+    @IBAction func onClickIncrease(_ sender: Any) {
+        count+=1
+    }
+    @IBAction func onClickDecrease(_ sender: Any) {
+        count-=1
     }
 }
 

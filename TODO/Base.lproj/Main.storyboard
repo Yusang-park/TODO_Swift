@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nWD-Gs-JHA">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,21 +13,53 @@
             <objects>
                 <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3Vu-rB-VBG" customClass="ViewController" customModule="TODO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Upt-X1-qSj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HyT-4c-W8G">
-                                <rect key="frame" x="20" y="126" width="374" height="21"/>
+                                <rect key="frame" x="20" y="108" width="728" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pnc-kQ-gzq">
+                                <rect key="frame" x="361" y="235.5" width="46.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Iho-aP-IiU">
+                                <rect key="frame" x="32" y="944" width="704" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="euI-RB-uOZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="336" height="31"/>
+                                        <buttonConfiguration key="configuration" style="tinted" title="Decrease"/>
+                                        <connections>
+                                            <action selector="onClickDecrease:" destination="3Vu-rB-VBG" eventType="touchUpInside" id="g4t-VY-WZB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ba-ib-cAg">
+                                        <rect key="frame" x="368" y="0.0" width="336" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Increase"/>
+                                        <connections>
+                                            <action selector="onClickIncrease:" destination="3Vu-rB-VBG" eventType="touchUpInside" id="3II-tW-uOx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IoG-d8-bxY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="HyT-4c-W8G" firstAttribute="top" secondItem="IoG-d8-bxY" secondAttribute="top" constant="38" id="6DT-I3-6WN"/>
+                            <constraint firstItem="IoG-d8-bxY" firstAttribute="trailing" secondItem="Iho-aP-IiU" secondAttribute="trailing" constant="32" id="Crs-hg-JjF"/>
+                            <constraint firstItem="Pnc-kQ-gzq" firstAttribute="top" secondItem="HyT-4c-W8G" secondAttribute="bottom" constant="107" id="Ivd-9Z-49f"/>
+                            <constraint firstItem="Pnc-kQ-gzq" firstAttribute="centerX" secondItem="Upt-X1-qSj" secondAttribute="centerX" id="Sec-Z0-5K3"/>
                             <constraint firstItem="IoG-d8-bxY" firstAttribute="trailing" secondItem="HyT-4c-W8G" secondAttribute="trailing" constant="20" id="aQA-hf-1Xq"/>
+                            <constraint firstItem="Iho-aP-IiU" firstAttribute="leading" secondItem="IoG-d8-bxY" secondAttribute="leading" constant="32" id="gNz-3p-TBg"/>
+                            <constraint firstItem="IoG-d8-bxY" firstAttribute="bottom" secondItem="Iho-aP-IiU" secondAttribute="bottom" constant="56" id="hSm-9k-tHv"/>
+                            <constraint firstItem="IoG-d8-bxY" firstAttribute="bottom" secondItem="Iho-aP-IiU" secondAttribute="bottom" constant="49" id="nK7-qo-Egc"/>
                             <constraint firstItem="HyT-4c-W8G" firstAttribute="leading" secondItem="IoG-d8-bxY" secondAttribute="leading" constant="20" id="o6p-fP-Xp0"/>
                         </constraints>
                     </view>
@@ -39,12 +71,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="countLabel" destination="Pnc-kQ-gzq" id="xvS-kW-cMu"/>
                         <outlet property="messageLabel" destination="HyT-4c-W8G" id="Zte-aM-N24"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YvR-n4-G6p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-230.43478260869566" y="-427.23214285714283"/>
+            <point key="canvasLocation" x="-232.71028037383175" y="-428.29373650107993"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qfF-bJ-rbe">
@@ -52,7 +85,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nWD-Gs-JHA" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7fb-bC-JSA">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -69,11 +102,11 @@
             <objects>
                 <viewController id="qxz-uc-9ow" customClass="EditViewController" customModule="TODO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="88t-Zo-fjw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="243" verticalHuggingPriority="242" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l39-dn-LbW">
-                                <rect key="frame" x="0.0" y="106" width="339" height="34"/>
+                                <rect key="frame" x="0.0" y="88" width="693" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -83,15 +116,6 @@
                                 <buttonConfiguration key="configuration" style="plain" title="수정"/>
                                 <connections>
                                     <action selector="onClickPopBtn:" destination="qxz-uc-9ow" eventType="touchDown" id="oMI-ll-aqw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="244" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWc-IB-3b8">
-                                <rect key="frame" x="304" y="209" width="48.5" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="수정"/>
-                                <connections>
-                                    <action selector="asdf:" destination="qxz-uc-9ow" eventType="touchDown" id="tdd-tJ-PjO"/>
                                 </connections>
                             </button>
                         </subviews>
